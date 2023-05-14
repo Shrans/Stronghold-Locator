@@ -43,6 +43,7 @@ def Calculate():
                     active_2 = False
         else:
             print("▲请输入正确的玩家位置信息")
+    # 处理数据
     x1 = float(player_1[0])
     z1 = float(player_1[2])
     k1 = -np.tan(np.deg2rad(float(player_1[3])))
@@ -88,12 +89,13 @@ def Estimate():
                 active_1 = False
         else:
             print("▲请输入正确的玩家位置信息")
+    # 处理数据
     x = float(player_1[0])
     z = float(player_1[2])
     theta = float(player_1[3])
     k = -np.tan(np.deg2rad(float(player_1[3])))
     # 该算法所用公式通过 微软数学 获得:https://mathsolver.microsoft.com/zh/solve-problem/@1038wxzim?ref=r
-    delta = np.sqrt((1728 ** 2) - ((z * k) ** 2) + ((1728 ** 2) * (k ** 2)) + (2 * x * z * k) - (x ** 2))
+    delta = np.sqrt(np.abs((1728 ** 2) - ((z * k) ** 2) + ((1728 ** 2) * (k ** 2)) + (2 * x * z * k) - (x ** 2)))
     divisor = (k ** 2) + 1
     z_position_1 = ((z * k * k) - delta - (x * k)) / divisor
     z_position_2 = ((z * k * k) + delta - (x * k)) / divisor
@@ -110,40 +112,24 @@ def Estimate():
     # 通过玩家视角进行坐标的取舍，并输出结果
     if 0 < theta < 90:
         if x_position_1 < x and z_position_1 > z:
-            print('★估算坐标：x=' + str(round(x_position_1)) + ',z=' + str(round(z_position_1)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_1)) + ' 100 ' + str(round(z_position_1)) +
-                  ' (y轴坐标可适当修改)\n')
-        elif x_position_2 < x and z_position_2 > z:
-            print('★估算坐标：x=' + str(round(x_position_2)) + ',z=' + str(round(z_position_2)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_2)) + ' 100 ' + str(round(z_position_2)) +
-                  ' (y轴坐标可适当修改)\n')
+            Estimate_Print(x_position_1, z_position_1)
+        else:
+            Estimate_Print(x_position_2, z_position_2)
     elif 90 < theta < 180:
         if x_position_1 < x and z_position_1 < z:
-            print('★估算坐标：x=' + str(round(x_position_1)) + ',z=' + str(round(z_position_1)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_1)) + ' 100 ' + str(round(z_position_1)) +
-                  ' (y轴坐标可适当修改)\n')
-        elif x_position_2 < x and z_position_2 < z:
-            print('★估算坐标：x=' + str(round(x_position_2)) + ',z=' + str(round(z_position_2)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_2)) + ' 100 ' + str(round(z_position_2)) +
-                  ' (y轴坐标可适当修改)\n')
+            Estimate_Print(x_position_1, z_position_1)
+        else:
+            Estimate_Print(x_position_2, z_position_2)
     elif -90 < theta < 0:
         if x_position_1 > x and z_position_1 > z:
-            print('★估算坐标：x=' + str(round(x_position_1)) + ',z=' + str(round(z_position_1)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_1)) + ' 100 ' + str(round(z_position_1)) +
-                  ' (y轴坐标可适当修改)\n')
-        elif x_position_2 > x and z_position_2 > z:
-            print('★估算坐标：x=' + str(round(x_position_2)) + ',z=' + str(round(z_position_2)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_2)) + ' 100 ' + str(round(z_position_2)) +
-                  ' (y轴坐标可适当修改)\n')
+            Estimate_Print(x_position_1, z_position_1)
+        else:
+            Estimate_Print(x_position_2, z_position_2)
     elif -180 < theta < -90:
         if x_position_1 > x and z_position_1 < z:
-            print('★估算坐标：x=' + str(round(x_position_1)) + ',z=' + str(round(z_position_1)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_1)) + ' 100 ' + str(round(z_position_1)) +
-                  ' (y轴坐标可适当修改)\n')
-        elif x_position_2 > x and z_position_2 < z:
-            print('★估算坐标：x=' + str(round(x_position_2)) + ',z=' + str(round(z_position_2)) +
-                  '\n★传送指令：/tp ' + str(round(x_position_2)) + ' 100 ' + str(round(z_position_2)) +
-                  ' (y轴坐标可适当修改)\n')
+            Estimate_Print(x_position_1, z_position_1)
+        else:
+            Estimate_Print(x_position_2, z_position_2)
     else:
         print('▲暂不支持对朝向角度为90°时的特殊情况进行估算，请更换地点重新测量，或使用点斜式交点法进行计算\n')
     active_back = True
@@ -161,11 +147,17 @@ def Estimate():
             print('▲未知指令，请重新输入')
 
 
+# 点斜式估算法输出模块
+def Estimate_Print(x, z):
+    print('★估算坐标：x=' + str(round(x)) + ',z=' + str(round(z)) +
+          '\n★传送指令：/tp ' + str(round(x)) + ' 100 ' + str(round(z)) + ' (y轴坐标可适当修改)\n')
+
+
 # 操作指南模块
 def Help():
     print("●使用方法：\n①先在游戏中定位到末影之眼的方向\n②按下F3+C复制当前玩家位置信息\n"
-          "③将玩家位置信息粘贴到指定的输入框中\n④获取结果坐标\n▲注意：点斜式估算法暂不支持对朝向角度为90°时的特殊情况进行估算，"
-          "但可以使用点斜式交点法计算\n")
+          "③将玩家位置信息粘贴到指定的输入框中\n④获取结果坐标\n▲注意事项：\n①该计算器只支持计算处在第一环范围内的要塞\n"
+          "②点斜式估算法暂不支持对朝向角度为90°时的特殊情况进行估算，但可以使用点斜式交点法计算\n")
     Menu()
 
 
