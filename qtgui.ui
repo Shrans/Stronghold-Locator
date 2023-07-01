@@ -14,35 +14,68 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>391</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Stronghold-Locator</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>180</y>
-      <width>501</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Stronghold-Locator</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4" colspan="2">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>结果：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置1（始终需要）：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2" colspan="2">
+     <widget class="QLineEdit" name="xyt_1"/>
+    </item>
+    <item row="1" column="4" rowspan="3" colspan="2">
+     <widget class="QTextBrowser" name="print_out"/>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置2（点斜式交点法需要）：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2" colspan="2">
+     <widget class="QLineEdit" name="xyt_2"/>
+    </item>
+    <item row="3" column="0" colspan="4">
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -55,144 +88,38 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;③将玩家位置信息粘贴到指定的输入框中&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;④获取结果坐标&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;▲注意：点斜式估算法暂不支持对超出距离主世界原点1728格的数据进行估算&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="xyt_1">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>90</y>
-      <width>271</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="xyt_2">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>130</y>
-      <width>271</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>74</x>
-      <y>90</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>位置1（始终需要）：</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>221</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>位置2（点斜式交点法需要）：</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="dx_jd">
-    <property name="geometry">
-     <rect>
-      <x>4</x>
-      <y>370</y>
-      <width>150</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>点斜式交点法计算</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="dx_gs">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>370</y>
-      <width>150</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>点斜式估算法计算</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="about">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>370</y>
-      <width>150</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>项目地址</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="print_out">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>80</y>
-      <width>261</width>
-      <height>261</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>40</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>结果：</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="copy_tp">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>370</y>
-      <width>150</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>复制TP指令</string>
-    </property>
-   </widget>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="dx_jd">
+      <property name="text">
+       <string>点斜式交点法计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QPushButton" name="dx_gs">
+      <property name="text">
+       <string>点斜式估算法计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3" colspan="2">
+     <widget class="QPushButton" name="copy_tp">
+      <property name="text">
+       <string>复制TP指令</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="about">
+      <property name="text">
+       <string>项目地址</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
    <zorder>print_out</zorder>
    <zorder>label</zorder>
    <zorder>textBrowser</zorder>
