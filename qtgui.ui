@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>420</height>
+    <width>836</width>
+    <height>316</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,18 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Stronghold-Locator</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="4" colspan="2">
      <widget class="QLabel" name="label_4">
       <property name="font">
@@ -39,23 +27,18 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="dx_jd">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
       </property>
       <property name="text">
-       <string>位置1（始终需要）：</string>
+       <string>点斜式交点法计算</string>
       </property>
      </widget>
-    </item>
-    <item row="1" column="2" colspan="2">
-     <widget class="QLineEdit" name="xyt_1"/>
-    </item>
-    <item row="1" column="4" rowspan="3" colspan="2">
-     <widget class="QTextBrowser" name="print_out"/>
     </item>
     <item row="2" column="0" colspan="2">
      <widget class="QLabel" name="label_3">
@@ -69,8 +52,55 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2" colspan="2">
-     <widget class="QLineEdit" name="xyt_2"/>
+    <item row="1" column="2" colspan="2">
+     <widget class="QLineEdit" name="xyt_1"/>
+    </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QPushButton" name="dx_gs">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>点斜式估算法计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Stronghold-Locator</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="about">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>项目地址</string>
+      </property>
+     </widget>
     </item>
     <item row="3" column="0" colspan="4">
      <widget class="QTextBrowser" name="textBrowser">
@@ -91,31 +121,47 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="dx_jd">
-      <property name="text">
-       <string>点斜式交点法计算</string>
+    <item row="1" column="4" rowspan="3" colspan="2">
+     <widget class="QTextBrowser" name="print_out"/>
+    </item>
+    <item row="2" column="2" colspan="2">
+     <widget class="QLineEdit" name="xyt_2">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
       </property>
      </widget>
     </item>
-    <item row="4" column="1" colspan="2">
-     <widget class="QPushButton" name="dx_gs">
+    <item row="1" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>点斜式估算法计算</string>
+       <string>位置1（始终需要）：</string>
       </property>
      </widget>
     </item>
     <item row="4" column="3" colspan="2">
      <widget class="QPushButton" name="copy_tp">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>复制TP指令</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="5">
-     <widget class="QPushButton" name="about">
-      <property name="text">
-       <string>项目地址</string>
       </property>
      </widget>
     </item>
