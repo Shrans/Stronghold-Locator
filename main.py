@@ -1,6 +1,6 @@
 import sys
 import webbrowser
-from pyperclip import copy
+import pyperclip
  
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import *
@@ -21,6 +21,8 @@ class MainWindow(QMainWindow):
         self.ui.dx_jd.clicked.connect(self.dx_jd)
         self.ui.dx_gs.clicked.connect(self.dx_gs)
         self.ui.about.clicked.connect(self.about)
+        self.ui.copy_1.clicked.connect(self.copy_1)
+        self.ui.copy_2.clicked.connect(self.copy_2)
         self.ui.copy_tp.clicked.connect(self.copy_tp)
     
 
@@ -50,7 +52,15 @@ class MainWindow(QMainWindow):
 
     def copy_tp(self):
         global tp
-        copy(tp)
+        pyperclip.copy(tp)
+    
+    def copy_1(self):
+        self.ui.xyt_1.setText(pyperclip.paste())
+
+    def copy_2(self):
+        self.ui.xyt_2.setText(pyperclip.paste())
+    
+
 
 
 

@@ -52,9 +52,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2" colspan="2">
-     <widget class="QLineEdit" name="xyt_1"/>
-    </item>
     <item row="4" column="1" colspan="2">
      <widget class="QPushButton" name="dx_gs">
       <property name="enabled">
@@ -124,16 +121,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <item row="1" column="4" rowspan="3" colspan="2">
      <widget class="QTextBrowser" name="print_out"/>
     </item>
-    <item row="2" column="2" colspan="2">
-     <widget class="QLineEdit" name="xyt_2">
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0" colspan="2">
      <widget class="QLabel" name="label_2">
       <property name="font">
@@ -165,6 +152,40 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="xyt_1">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="xyt_2">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="copy_1">
+      <property name="text">
+       <string>读取剪贴板</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="copy_2">
+      <property name="text">
+       <string>读取剪贴板</string>
+      </property>
+     </widget>
+    </item>
    </layout>
    <zorder>print_out</zorder>
    <zorder>label</zorder>
@@ -178,6 +199,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <zorder>about</zorder>
    <zorder>label_4</zorder>
    <zorder>copy_tp</zorder>
+   <zorder>copy_1</zorder>
+   <zorder>copy_2</zorder>
   </widget>
  </widget>
  <resources/>

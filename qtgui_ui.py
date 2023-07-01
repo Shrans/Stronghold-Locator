@@ -50,11 +50,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_3, 2, 0, 1, 2)
 
-        self.xyt_1 = QLineEdit(self.centralwidget)
-        self.xyt_1.setObjectName(u"xyt_1")
-
-        self.gridLayout.addWidget(self.xyt_1, 1, 2, 1, 2)
-
         self.dx_gs = QPushButton(self.centralwidget)
         self.dx_gs.setObjectName(u"dx_gs")
         self.dx_gs.setEnabled(True)
@@ -87,12 +82,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.print_out, 1, 4, 3, 2)
 
-        self.xyt_2 = QLineEdit(self.centralwidget)
-        self.xyt_2.setObjectName(u"xyt_2")
-        self.xyt_2.setMinimumSize(QSize(200, 0))
-
-        self.gridLayout.addWidget(self.xyt_2, 2, 2, 1, 2)
-
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setFont(font1)
@@ -105,6 +94,28 @@ class Ui_MainWindow(object):
         self.copy_tp.setMaximumSize(QSize(16777215, 16777215))
 
         self.gridLayout.addWidget(self.copy_tp, 4, 3, 1, 2)
+
+        self.xyt_1 = QLineEdit(self.centralwidget)
+        self.xyt_1.setObjectName(u"xyt_1")
+        self.xyt_1.setMinimumSize(QSize(200, 0))
+
+        self.gridLayout.addWidget(self.xyt_1, 1, 2, 1, 1)
+
+        self.xyt_2 = QLineEdit(self.centralwidget)
+        self.xyt_2.setObjectName(u"xyt_2")
+        self.xyt_2.setMinimumSize(QSize(200, 0))
+
+        self.gridLayout.addWidget(self.xyt_2, 2, 2, 1, 1)
+
+        self.copy_1 = QPushButton(self.centralwidget)
+        self.copy_1.setObjectName(u"copy_1")
+
+        self.gridLayout.addWidget(self.copy_1, 1, 3, 1, 1)
+
+        self.copy_2 = QPushButton(self.centralwidget)
+        self.copy_2.setObjectName(u"copy_2")
+
+        self.gridLayout.addWidget(self.copy_2, 2, 3, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.print_out.raise_()
@@ -119,6 +130,8 @@ class Ui_MainWindow(object):
         self.about.raise_()
         self.label_4.raise_()
         self.copy_tp.raise_()
+        self.copy_1.raise_()
+        self.copy_2.raise_()
 
         self.retranslateUi(MainWindow)
 
@@ -150,5 +163,7 @@ class Ui_MainWindow(object):
                         "\u884c\u4f30\u7b97</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u4f4d\u7f6e1\uff08\u59cb\u7ec8\u9700\u8981\uff09\uff1a", None))
         self.copy_tp.setText(QCoreApplication.translate("MainWindow", u"\u590d\u5236TP\u6307\u4ee4", None))
+        self.copy_1.setText(QCoreApplication.translate("MainWindow", u"\u8bfb\u53d6\u526a\u8d34\u677f", None))
+        self.copy_2.setText(QCoreApplication.translate("MainWindow", u"\u8bfb\u53d6\u526a\u8d34\u677f", None))
     # retranslateUi
 
