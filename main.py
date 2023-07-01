@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
         xyt_1=str(self.ui.xyt_1.text())
         self.ui.print_out.setText(LocatorLib.Estimate(xyt_1))
 
-    def about():
+    def about(self):
         webbrowser.open("github.com/lidongxun967/Stronghold-Locator-GUI")
 
  
