@@ -158,7 +158,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <x>530</x>
       <y>80</y>
       <width>261</width>
-      <height>281</height>
+      <height>261</height>
      </rect>
     </property>
    </widget>
@@ -180,6 +180,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>结果：</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="copy_tp">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>370</y>
+      <width>150</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>复制TP指令</string>
+    </property>
+   </widget>
    <zorder>print_out</zorder>
    <zorder>label</zorder>
    <zorder>textBrowser</zorder>
@@ -191,6 +204,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <zorder>dx_gs</zorder>
    <zorder>about</zorder>
    <zorder>label_4</zorder>
+   <zorder>copy_tp</zorder>
   </widget>
  </widget>
  <resources/>

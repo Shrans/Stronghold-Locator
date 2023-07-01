@@ -61,13 +61,16 @@ class Ui_MainWindow(object):
         self.about.setGeometry(QRect(600, 370, 150, 41))
         self.print_out = QTextBrowser(self.centralwidget)
         self.print_out.setObjectName(u"print_out")
-        self.print_out.setGeometry(QRect(530, 80, 261, 281))
+        self.print_out.setGeometry(QRect(530, 80, 261, 261))
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(550, 40, 111, 31))
         font2 = QFont()
         font2.setPointSize(15)
         self.label_4.setFont(font2)
+        self.copy_tp = QPushButton(self.centralwidget)
+        self.copy_tp.setObjectName(u"copy_tp")
+        self.copy_tp.setGeometry(QRect(430, 370, 150, 41))
         MainWindow.setCentralWidget(self.centralwidget)
         self.print_out.raise_()
         self.label.raise_()
@@ -80,6 +83,7 @@ class Ui_MainWindow(object):
         self.dx_gs.raise_()
         self.about.raise_()
         self.label_4.raise_()
+        self.copy_tp.raise_()
 
         self.retranslateUi(MainWindow)
 
@@ -110,5 +114,6 @@ class Ui_MainWindow(object):
         self.dx_gs.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u659c\u5f0f\u4f30\u7b97\u6cd5\u8ba1\u7b97", None))
         self.about.setText(QCoreApplication.translate("MainWindow", u"\u9879\u76ee\u5730\u5740", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u7ed3\u679c\uff1a", None))
+        self.copy_tp.setText(QCoreApplication.translate("MainWindow", u"\u590d\u5236TP\u6307\u4ee4", None))
     # retranslateUi
 
