@@ -4,7 +4,7 @@ import sys
 
 # 点斜式估算法输出模块
 def Estimate_Print(x, z):
-    return ('★估算坐标：x=' + str(round(x)) + ',z=' + str(round(z)) +'\n★传送指令：','/tp ' + str(round(x)) + ' 100 ' + str(round(z)))
+    return (str(round(x)),str(round(z)),'/tp ' + str(round(x)) + ' 100 ' + str(round(z)))
     
 
 # 点斜式交点法计算模块
@@ -52,7 +52,7 @@ def Calculate(xyt_1=None,xyt_2=None,active_1=True, active_2=True, player_1=None,
     # 该算法所用公式通过 微软数学 获得:https://mathsolver.microsoft.com/zh/solve-problem/@1cb6uy4rp?ref=r
     z_position = -(((z1 * k1) - (z2 * k2) - x1 + x2) / (k2 - k1))
     x_position = -(((z1 * k1 * k2) - (z2 * k1 * k2) - (x1 * k2) + (x2 * k1)) / (k2 - k1))
-    return ('★预计坐标：x=' + str(round(x_position)) + ',z=' + str(round(z_position)) +'\n★传送指令：', '/tp ' + str(round(x_position)) + ' 100 ' + str(round(z_position)))
+    return (str(round(x_position)),str(round(z_position)), '/tp ' + str(round(x_position)) + ' 100 ' + str(round(z_position)))
 
 
 # 点斜式估算法计算模块

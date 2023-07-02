@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>836</width>
-    <height>316</height>
+    <width>949</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,91 +15,102 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="4" colspan="2">
-     <widget class="QLabel" name="label_4">
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>结果：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="dx_jd">
+    <item row="1" column="27" colspan="2">
+     <widget class="QLineEdit" name="out_z">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>点斜式交点法计算</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="label_3">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>位置2（点斜式交点法需要）：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1" colspan="2">
-     <widget class="QPushButton" name="dx_gs">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
+        <width>100</width>
         <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>16777215</width>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QPushButton" name="copy_1">
+      <property name="maximumSize">
+       <size>
+        <width>75</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="text">
-       <string>点斜式估算法计算</string>
+       <string>读取剪贴板</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Stronghold-Locator</string>
+    <item row="2" column="25" colspan="3">
+     <widget class="QLineEdit" name="out_tp">
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="4" column="5">
-     <widget class="QPushButton" name="about">
-      <property name="minimumSize">
+    <item row="3" column="6">
+     <widget class="QPushButton" name="copy_2">
+      <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>0</height>
+        <width>75</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="text">
-       <string>项目地址</string>
+       <string>读取剪贴板</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0" colspan="4">
+    <item row="3" column="25" colspan="4">
+     <widget class="QLineEdit" name="out_err">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="xyt_1">
+      <property name="minimumSize">
+       <size>
+        <width>315</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="24">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>错误信息：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="28">
+     <widget class="QPushButton" name="copy_tp">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>50</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>复制</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" rowspan="4" colspan="7">
      <widget class="QTextBrowser" name="textBrowser">
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -118,10 +129,105 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
-    <item row="1" column="4" rowspan="3" colspan="2">
-     <widget class="QTextBrowser" name="print_out"/>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="xyt_2">
+      <property name="minimumSize">
+       <size>
+        <width>315</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
     </item>
-    <item row="1" column="0" colspan="2">
+    <item row="2" column="24" alignment="Qt::AlignRight">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>TP指令：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置2（点斜式交点法需要）：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="24" alignment="Qt::AlignRight">
+     <widget class="QLabel" name="label_4">
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>X：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="26">
+     <widget class="QLabel" name="label_5">
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Z：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Stronghold-Locator-GUI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="25">
+     <widget class="QLineEdit" name="out_x">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>133</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
@@ -133,11 +239,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
-    <item row="4" column="3" colspan="2">
-     <widget class="QPushButton" name="copy_tp">
+    <item row="5" column="24" colspan="5">
+     <widget class="QPushButton" name="dx_gs">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="minimumSize">
        <size>
-        <width>200</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
@@ -148,60 +257,72 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </size>
       </property>
       <property name="text">
-       <string>复制TP指令</string>
+       <string>点斜式估算法计算</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QLineEdit" name="xyt_1">
+    <item row="4" column="24" colspan="5">
+     <widget class="QPushButton" name="dx_jd">
       <property name="minimumSize">
        <size>
-        <width>200</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="xyt_2">
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="copy_1">
       <property name="text">
-       <string>读取剪贴板</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QPushButton" name="copy_2">
-      <property name="text">
-       <string>读取剪贴板</string>
+       <string>点斜式交点法计算</string>
       </property>
      </widget>
     </item>
    </layout>
-   <zorder>print_out</zorder>
    <zorder>label</zorder>
    <zorder>textBrowser</zorder>
    <zorder>xyt_1</zorder>
    <zorder>xyt_2</zorder>
-   <zorder>label_2</zorder>
    <zorder>label_3</zorder>
-   <zorder>dx_jd</zorder>
-   <zorder>dx_gs</zorder>
-   <zorder>about</zorder>
-   <zorder>label_4</zorder>
-   <zorder>copy_tp</zorder>
    <zorder>copy_1</zorder>
    <zorder>copy_2</zorder>
+   <zorder>label_5</zorder>
+   <zorder>out_x</zorder>
+   <zorder>label_4</zorder>
+   <zorder>out_tp</zorder>
+   <zorder>copy_tp</zorder>
+   <zorder>out_z</zorder>
+   <zorder>label_6</zorder>
+   <zorder>out_err</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_2</zorder>
+   <zorder>dx_jd</zorder>
+   <zorder>dx_gs</zorder>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>949</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="ck_y"/>
+    <addaction name="ck_gui"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="ck_y">
+   <property name="text">
+    <string>原仓库</string>
+   </property>
+  </action>
+  <action name="ck_gui">
+   <property name="text">
+    <string>本GUI版仓库</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
