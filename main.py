@@ -1,4 +1,4 @@
-import sys
+import sys,os
 import webbrowser
 import pyperclip
  
@@ -44,7 +44,9 @@ class MainWindow(QMainWindow):
         self.ui.copy_2.clicked.connect(self.copy_2)
         self.ui.copy_tp.clicked.connect(self.copy_tp)
         self.ui.ck_y.triggered.connect(self.ck_y)
-        self.ui.ck_gui.triggered.connect(self.ck_gui)
+        self.ui.bh_y.triggered.connect(self.bh_y)
+        self.ui.bh_g.triggered.connect(self.bh_g)
+        self.ui.open_log.triggered.connect(self.open_log)
     
 
     def dx_jd(self):
@@ -100,10 +102,14 @@ class MainWindow(QMainWindow):
     def ck_y(self):
         webbrowser.open("https://github.com/Shrans/Stronghold-Locator")
 
-    def ck_gui(self):
-        webbrowser.open("https://github.com/lidongxun967/Stronghold-Locator-GUI")
+    def bh_y(self):
+        webbrowser.open("https://space.bilibili.com/228828764")
     
-
+    def bh_g(self):
+        webbrowser.open("https://space.bilibili.com/502594227")
+    
+    def open_log(self):
+        os.system("start log.txt")
 
 
 
