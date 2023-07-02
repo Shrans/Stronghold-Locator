@@ -214,8 +214,11 @@ class Ui_MainWindow(object):
                         "rgin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u2461\u6309\u4e0bF3+C\u590d\u5236\u5f53\u524d\u73a9\u5bb6\u4f4d\u7f6e\u4fe1\u606f</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u2462\u5c06\u73a9\u5bb6\u4f4d\u7f6e\u4fe1\u606f\u7c98\u8d34\u5230\u6307\u5b9a\u7684\u8f93\u5165\u6846\u4e2d</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u2463\u83b7\u53d6\u7ed3\u679c\u5750\u6807</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u25b2\u6ce8\u610f\uff1a\u70b9\u659c\u5f0f\u4f30\u7b97\u6cd5\u6682\u4e0d\u652f\u6301\u5bf9\u8d85\u51fa\u8ddd\u79bb\u4e3b\u4e16\u754c\u539f\u70b91728\u683c\u7684\u6570\u636e\u8fdb"
-                        "\u884c\u4f30\u7b97</span></p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u25b2\u6ce8\u610f\uff1a</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" fo"
+                        "nt-size:12pt;\">\u2460\u70b9\u659c\u5f0f\u4f30\u7b97\u6cd5\u6682\u4e0d\u652f\u6301\u5bf9\u8d85\u51fa\u8ddd\u79bb\u4e3b\u4e16\u754c\u539f\u70b91728\u683c\u7684\u6570\u636e\u8fdb\u884c\u4f30\u7b97</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">\u2461\u5728\u8bb0\u5f55\u6570\u636e\u524d\u8bf7\u4fdd\u8bc1\u4e24\u4e2a\u672b\u5f71\u4e4b\u773c\u6307\u5411\u7684\u662f\u540c\u4e00\u4e2a\u8981\u585e</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;\"><br /></p></body></html>", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"TP\u6307\u4ee4\uff1a", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u4f4d\u7f6e2\uff08\u70b9\u659c\u5f0f\u4ea4\u70b9\u6cd5\u9700\u8981\uff09\uff1a", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"X\uff1a", None))

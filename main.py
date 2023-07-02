@@ -7,10 +7,30 @@ from PySide6.QtWidgets import *
  
 from qtgui_ui import Ui_MainWindow
 
-import LocatorLib
+import LocatorLib,time
 
 tp = ""
 
+def LogTxt(xyt_1, xyt_2,out):
+    with open("log.txt", "a",encoding = 'utf-8') as f:
+        if type(out)==str:
+            f.write(f"""
+
+时间：{time.ctime()}
+位置1：{xyt_1}
+位置2：{xyt_2}
+错误信息：{out}
+
+""")
+        else:
+            f.write(f"""
+
+时间：{time.ctime()}
+位置1：{xyt_1}
+位置2：{xyt_2}
+结果：x={out[0]},y={out[1]}
+TP指令：{out[2]}
+""")
 
 class MainWindow(QMainWindow):
     def __init__(self, parent = None) :
@@ -37,12 +57,14 @@ class MainWindow(QMainWindow):
             self.ui.out_x.setText("")
             self.ui.out_z.setText("")
             self.ui.out_tp.setText("")
+            LogTxt(xyt_1,xyt_2,out)
         else:
             tp = out[2]
             self.ui.out_err.setText("")
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
             self.ui.out_tp.setText(out[2])
+            LogTxt(xyt_1,xyt_2,out)
 
     def dx_gs(self):
         global tp
@@ -53,12 +75,14 @@ class MainWindow(QMainWindow):
             self.ui.out_x.setText("")
             self.ui.out_z.setText("")
             self.ui.out_tp.setText("")
+            LogTxt(xyt_1,"估算模式",out)
         else:
             tp = out[2]
             self.ui.out_err.setText("")
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
             self.ui.out_tp.setText(out[2])
+            LogTxt(xyt_1,"估算模式",out)
 
     def about(self):
         webbrowser.open("github.com/lidongxun967/Stronghold-Locator-GUI")
