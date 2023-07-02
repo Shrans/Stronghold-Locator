@@ -34,8 +34,12 @@ class MainWindow(QMainWindow):
         out=LocatorLib.Calculate(xyt_1,xyt_2)
         if type(out)==str:
             self.ui.out_err.setText(out)
+            self.ui.out_x.setText("")
+            self.ui.out_z.setText("")
+            self.ui.out_tp.setText("")
         else:
             tp = out[2]
+            self.ui.out_err.setText("")
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
             self.ui.out_tp.setText(out[2])
@@ -46,8 +50,12 @@ class MainWindow(QMainWindow):
         out=LocatorLib.Estimate(xyt_1)
         if type(out)==str:
             self.ui.out_err.setText(out)
+            self.ui.out_x.setText("")
+            self.ui.out_z.setText("")
+            self.ui.out_tp.setText("")
         else:
             tp = out[2]
+            self.ui.out_err.setText("")
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
             self.ui.out_tp.setText(out[2])

@@ -1,6 +1,5 @@
 import numpy as np
-import webbrowser
-import sys
+
 
 # 点斜式估算法输出模块
 def Estimate_Print(x, z):
@@ -49,10 +48,15 @@ def Calculate(xyt_1=None,xyt_2=None,active_1=True, active_2=True, player_1=None,
     x2 = float(player_2[0])
     z2 = float(player_2[2])
     k2 = -np.tan(np.deg2rad(float(player_2[3])))
+    if k1 == k2:
+        return "▲两点的朝向平行无交点，意味着珍珠指向不同要塞，无解" 
     # 该算法所用公式通过 微软数学 获得:https://mathsolver.microsoft.com/zh/solve-problem/@1cb6uy4rp?ref=r
     z_position = -(((z1 * k1) - (z2 * k2) - x1 + x2) / (k2 - k1))
     x_position = -(((z1 * k1 * k2) - (z2 * k1 * k2) - (x1 * k2) + (x2 * k1)) / (k2 - k1))
-    return (str(round(x_position)),str(round(z_position)), '/tp ' + str(round(x_position)) + ' 100 ' + str(round(z_position)))
+    out_x = str(round(x_position))
+    out_z = str(round(z_position))
+    return (out_x,out_z, '/tp ' + out_x + ' 100 ' + out_z)
+
 
 
 # 点斜式估算法计算模块
