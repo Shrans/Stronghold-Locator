@@ -3,7 +3,7 @@ import numpy as np
 
 # 点斜式估算法输出模块
 def Estimate_Print(x, z):
-    return (str(round(x)),str(round(z)),'/tp ' + str(round(x)) + ' 100 ' + str(round(z)))
+    return (str(round(x)),str(round(z)))
     
 
 # 点斜式交点法计算模块
@@ -49,13 +49,13 @@ def Calculate(xyt_1=None,xyt_2=None,active_1=True, active_2=True, player_1=None,
     z2 = float(player_2[2])
     k2 = -np.tan(np.deg2rad(float(player_2[3])))
     if k1 == k2:
-        return "▲两点的朝向平行无交点，意味着珍珠指向不同要塞，无解" 
+        return "▲两点的朝向平行无交点，意味着末影之眼指向不同要塞，无解" 
     # 该算法所用公式通过 微软数学 获得:https://mathsolver.microsoft.com/zh/solve-problem/@1cb6uy4rp?ref=r
     z_position = -(((z1 * k1) - (z2 * k2) - x1 + x2) / (k2 - k1))
     x_position = -(((z1 * k1 * k2) - (z2 * k1 * k2) - (x1 * k2) + (x2 * k1)) / (k2 - k1))
     out_x = str(round(x_position))
     out_z = str(round(z_position))
-    return (out_x,out_z, '/tp ' + out_x + ' 100 ' + out_z)
+    return (out_x,out_z)
 
 
 
@@ -127,3 +127,25 @@ def Estimate(xyt_1=None,active_1=True, active_back=True, player_1=None):
                 Estimate_Print(x_position_2, z_position_2)
     else:
         return '▲请在距离主世界原点1728格以内的范围中进行估算\n'
+
+def CalculateT(xyt1=None,xyt2=None,xyt3=None,xzmax=32):
+    lot = [
+        Calculate(xyt1,xyt2),
+        Calculate(xyt1,xyt3),
+        Calculate(xyt2,xyt3)
+    ]
+
+    if type(lot[0]) == str:
+        return lot[0]
+    elif type(lot[1]) == str:
+        return lot[1]
+    elif type(lot[2]) == str:
+        return lot[2]
+    
+    xx=max(int(lot[0][0]),int(lot[1][0]),int(lot[2][0]))-min(int(lot[0][0]),int(lot[1][0]),int(lot[2][0]))
+    zz=max(int(lot[0][1]),int(lot[1][1]),int(lot[2][1]))-min(int(lot[0][1]),int(lot[1][1]),int(lot[2][1]))
+
+    if xx > xzmax or zz > xzmax:
+        return "▲误差过大，请修正数值"
+    
+    return (str(int(sum((int(lot[0][0]),int(lot[1][0]),int(lot[2][0]))) / 3)), str(int(sum((int(lot[0][1]),int(lot[1][1]),int(lot[2][1]))) / 3)))

@@ -19,78 +19,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="2">
-     <widget class="QLineEdit" name="xyt_2">
-      <property name="minimumSize">
-       <size>
-        <width>315</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="6">
-     <widget class="QPushButton" name="copy_1">
-      <property name="maximumSize">
-       <size>
-        <width>75</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>读取剪贴板</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="25" colspan="3">
-     <widget class="QLineEdit" name="out_tp">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLineEdit" name="xyt_1">
-      <property name="minimumSize">
-       <size>
-        <width>315</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_3">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>位置2（点斜式交点法需要）：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="24" alignment="Qt::AlignRight">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>TP指令：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="24" colspan="5">
-     <widget class="QPushButton" name="dx_jd">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>点斜式交点法计算</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="25">
      <widget class="QLineEdit" name="out_x">
       <property name="minimumSize">
@@ -110,47 +38,10 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="26">
-     <widget class="QLabel" name="label_5">
-      <property name="minimumSize">
-       <size>
-        <width>10</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>25</width>
-        <height>16777215</height>
-       </size>
-      </property>
+    <item row="2" column="24">
+     <widget class="QLabel" name="label_6">
       <property name="text">
-       <string>Z：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="6">
-     <widget class="QPushButton" name="copy_2">
-      <property name="maximumSize">
-       <size>
-        <width>75</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>读取剪贴板</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>位置1（始终需要）：</string>
+       <string>TP指令：</string>
       </property>
      </widget>
     </item>
@@ -173,63 +64,22 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0" rowspan="3" colspan="7">
-     <widget class="QTextBrowser" name="textBrowser">
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;●使用方法：&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;①先在游戏中确定末影之眼的方向&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;②按下F3+C复制当前玩家位置信息&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;③将玩家位置信息粘贴到指定的输入框中&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;④获取结果坐标&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;▲注意：&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;①点斜式估算法暂不支持对超出距离主世界原点1728格的数据进行估算&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;②在记录数据前请保证两个末影之眼指向的是同一个要塞&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="24" alignment="Qt::AlignRight">
-     <widget class="QLabel" name="label_4">
-      <property name="minimumSize">
-       <size>
-        <width>10</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>25</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>X：</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="27" colspan="2">
-     <widget class="QLineEdit" name="out_z">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>200</width>
-        <height>16777215</height>
-       </size>
-      </property>
+    <item row="2" column="25" colspan="3">
+     <widget class="QLineEdit" name="out_tp">
       <property name="readOnly">
        <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置1（始终需要）：</string>
       </property>
      </widget>
     </item>
@@ -242,6 +92,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
       <property name="text">
        <string>Stronghold-Locator-GUI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置3（仅三交法需要）：</string>
       </property>
      </widget>
     </item>
@@ -267,24 +129,203 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="xyt_1">
+      <property name="minimumSize">
+       <size>
+        <width>315</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="6">
+     <widget class="QPushButton" name="copy_3">
+      <property name="text">
+       <string>读取剪贴板</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>位置2（仅估算法不需要）：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="xyt_2">
+      <property name="minimumSize">
+       <size>
+        <width>315</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" rowspan="3" colspan="7">
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;●使用方法：&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;①先在游戏中确定末影之眼的方向&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;②按下F3+C复制当前玩家位置信息&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;③将玩家位置信息粘贴到指定的输入框中&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;④获取结果坐标&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;▲注意：&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;①点斜式估算法暂不支持对超出距离主世界原点1728格的数据进行估算&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;②在记录数据前请保证两个末影之眼指向的是同一个要塞&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="xyt_3"/>
+    </item>
+    <item row="1" column="27" colspan="2">
+     <widget class="QLineEdit" name="out_z">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="6">
+     <widget class="QPushButton" name="copy_2">
+      <property name="maximumSize">
+       <size>
+        <width>75</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>读取剪贴板</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QPushButton" name="copy_1">
+      <property name="maximumSize">
+       <size>
+        <width>75</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>读取剪贴板</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="24" colspan="5">
+     <widget class="QPushButton" name="dx_sj">
+      <property name="text">
+       <string>点斜式三交法计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="24" colspan="5">
+     <widget class="QPushButton" name="dx_jd">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>点斜式交点法计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="26">
+     <widget class="QLabel" name="label_5">
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Z：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="24" alignment="Qt::AlignRight">
+     <widget class="QLabel" name="label_4">
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>X：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="27" colspan="2">
+     <widget class="QCheckBox" name="win_top">
+      <property name="text">
+       <string>始终置顶</string>
+      </property>
+     </widget>
+    </item>
    </layout>
    <zorder>label</zorder>
    <zorder>textBrowser</zorder>
    <zorder>xyt_1</zorder>
-   <zorder>xyt_2</zorder>
-   <zorder>label_3</zorder>
    <zorder>copy_1</zorder>
-   <zorder>copy_2</zorder>
    <zorder>label_5</zorder>
    <zorder>out_x</zorder>
    <zorder>label_4</zorder>
+   <zorder>out_z</zorder>
+   <zorder>label_2</zorder>
+   <zorder>xyt_3</zorder>
+   <zorder>copy_3</zorder>
+   <zorder>xyt_2</zorder>
+   <zorder>copy_2</zorder>
+   <zorder>label_6</zorder>
    <zorder>out_tp</zorder>
    <zorder>copy_tp</zorder>
-   <zorder>out_z</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_2</zorder>
    <zorder>dx_jd</zorder>
    <zorder>dx_gs</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_7</zorder>
+   <zorder>dx_sj</zorder>
+   <zorder>win_top</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

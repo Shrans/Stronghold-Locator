@@ -5,7 +5,8 @@ import pyperclip
  
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import *
-
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import Qt
  
 from qtgui_ui import Ui_MainWindow
 
@@ -17,8 +18,11 @@ import requests
 
 from memory_pic import *
 
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtGui import QKeySequence, QShortcut
 
-if not os.path.exists('icon.ico'):
+
+if not os.path.exists('icon.ico'):      # 释放图标
     def get_pic(pic_code, pic_name):
         image = open(pic_name, 'wb')
         image.write(b64decode(pic_code))
@@ -30,19 +34,19 @@ if not os.path.exists('icon.ico'):
 # 检查文件是否存在
 if not os.path.exists('set.json'):
     # 如果文件不存在，则创建并写入初始内容
-    data = {"debug": False, "debug_version": False, "map": True}
+    data = {"debug": False, "debug_version": False, "map": True, "tpy": 100, "osj": False,"sjy":32}
     with open('set.json', 'w') as f:
         json.dump(data, f)
 
 
 tp = ""
-version = "v3.0.0"
+version = "v3.1.0"
 vc = vd = 0
 with open("set.json","r") as f:
     set_json=json.loads(f.read())
 
 
-def LogTxt(xyt_1, xyt_2,out):
+def LogTxt(xyt_1, xyt_2 ,xyt_3,out):
     with open("log.txt", "a",encoding = 'utf-8') as f:
         if type(out)==str:
             f.write(f"""
@@ -50,6 +54,7 @@ def LogTxt(xyt_1, xyt_2,out):
 时间：{time.ctime()}
 位置1：{xyt_1}
 位置2：{xyt_2}
+位置3：{xyt_3}
 错误信息：{out}
 
 """)
@@ -59,12 +64,13 @@ def LogTxt(xyt_1, xyt_2,out):
 时间：{time.ctime()}
 位置1：{xyt_1}
 位置2：{xyt_2}
+位置3：{xyt_3}
 结果：x={out[0]},y={out[1]}
-TP指令：{out[2]}
+TP指令：{f"/tp {out[0]} {set_json['tpy']} {out[1]}"}
 
 """)
 
-class Dialog(QDialog):
+class Dialog(QDialog):      #设置界面
     def __init__(self, parent = None) :
         with open("set.json","r") as f:
             out=json.loads(f.read())
@@ -75,13 +81,20 @@ class Dialog(QDialog):
             self.ui.tabWidget.removeTab(1)
         self.ui.debug_ver.setChecked(set_json["debug_version"])
         self.ui.open_map.setChecked(set_json["map"])
+        self.ui.open_sj.setChecked(set_json["osj"])
+        self.ui.tp_y.setValue(set_json["tpy"])
+        self.ui.sj_y.setValue(set_json["sjy"])
         self.ui.off_debug.clicked.connect(self.off_debug)
         self.ui.enter.clicked.connect(self.enter)
         self.ui.debug_ver.clicked.connect(self.debug_ver)
         self.ui.open_map.clicked.connect(self.open_map)
+        self.ui.open_sj.clicked.connect(self.open_sj)
 
     
     def enter(self):
+        set_json["tpy"] = int(self.ui.tp_y.text())
+        set_json["sjy"] = int(self.ui.sj_y.text())
+
         with open("set.json","w") as f:
             f.write(json.dumps(set_json))
         QMessageBox.about(self,"重启应用程序","请重启本应用，以应用设置。")
@@ -100,20 +113,29 @@ class Dialog(QDialog):
         global set_json
         set_json["map"]=self.ui.open_map.isChecked()
     
+    def open_sj(self):
+        global set_json
+        set_json["osj"]=self.ui.open_sj.isChecked()
+    
     
 
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow):      #主界面
     def __init__(self, parent = None) :
         
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        #主界面
+        if not set_json["osj"]:
+            self.ui.dx_sj.setEnabled(False)
         self.ui.dx_jd.clicked.connect(self.dx_jd)
+        self.ui.dx_sj.clicked.connect(self.dx_sj)
         self.ui.dx_gs.clicked.connect(self.dx_gs)
         self.ui.copy_1.clicked.connect(self.copy_1)
         self.ui.copy_2.clicked.connect(self.copy_2)
+        self.ui.copy_3.clicked.connect(self.copy_3)
         self.ui.copy_tp.clicked.connect(self.copy_tp)
         self.ui.ck_y.triggered.connect(self.ck_y)
         self.ui.bh_y.triggered.connect(self.bh_y)
@@ -121,7 +143,13 @@ class MainWindow(QMainWindow):
         self.ui.jc_gx.triggered.connect(self.jc_gx)
         self.ui.open_log.triggered.connect(self.open_log)
         self.ui.open_set.triggered.connect(self.open_set)
+        self.ui.win_top.clicked.connect(self.win_top)
+        shortcut = QShortcut(QKeySequence("Ctrl+R"), QApplication.instance())
+        shortcut.activated.connect(self.crp)
     
+
+    def crp(self):
+        print("crp")
 
     def dx_jd(self):
         global tp
@@ -133,17 +161,35 @@ class MainWindow(QMainWindow):
             self.ui.out_x.setText("")
             self.ui.out_z.setText("")
             self.ui.out_tp.setText("")
-            LogTxt(xyt_1,xyt_2,out)
+            LogTxt(xyt_1,xyt_2,"交点法",out)
         else:
-            tp = out[2]
+            tp = f"/tp {out[0]} {set_json['tpy']} {out[1]}"
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
-            self.ui.out_tp.setText(out[2])
-            LogTxt(xyt_1,xyt_2,out)
+            self.ui.out_tp.setText(f"/tp {out[0]} {set_json['tpy']} {out[1]}")
+            LogTxt(xyt_1,xyt_2,"交点法",out)
             if set_json['map']:
                 inxyt_1 = (float(str(self.ui.xyt_1.text()).split()[6]),float(str(self.ui.xyt_1.text()).split()[8]))
                 inxyt_2 = (float(str(self.ui.xyt_2.text()).split()[6]),float(str(self.ui.xyt_2.text()).split()[8]))
                 plt.plot_points_s(inxyt_1,inxyt_2,(int(out[0]),int(out[1])))
+    def dx_sj(self):
+        global tp
+        xyt_1=str(self.ui.xyt_1.text())
+        xyt_2=str(self.ui.xyt_2.text())
+        xyt_3=str(self.ui.xyt_3.text())
+        out=LocatorLib.CalculateT(xyt_1,xyt_2,xyt_3,set_json["sjy"])
+        if type(out)==str:
+            self.ui.print_err.showMessage("错误："+out,5000)
+            self.ui.out_x.setText("")
+            self.ui.out_z.setText("")
+            self.ui.out_tp.setText("")
+            LogTxt(xyt_1,xyt_2,xyt_3,out)
+        else:
+            tp = f"/tp {out[0]} {set_json['tpy']} {out[1]}"
+            self.ui.out_x.setText(out[0])
+            self.ui.out_z.setText(out[1])
+            self.ui.out_tp.setText(f"/tp {out[0]} {set_json['tpy']} {out[1]}")
+            LogTxt(xyt_1,xyt_2,xyt_3,out)
     def dx_gs(self):
         global tp
         xyt_1=str(self.ui.xyt_1.text())
@@ -153,13 +199,13 @@ class MainWindow(QMainWindow):
             self.ui.out_x.setText("")
             self.ui.out_z.setText("")
             self.ui.out_tp.setText("")
-            LogTxt(xyt_1,"估算模式",out)
+            LogTxt(xyt_1,"估算法","估算法",out)
         else:
-            tp = out[2]
+            tp = f"/tp {out[0]} {set_json['tpy']} {out[1]}"
             self.ui.out_x.setText(out[0])
             self.ui.out_z.setText(out[1])
-            self.ui.out_tp.setText(out[2])
-            LogTxt(xyt_1,"估算模式",out)
+            self.ui.out_tp.setText(f"/tp {out[0]} {set_json['tpy']} {out[1]}")
+            LogTxt(xyt_1,"估算法","估算法",out)
             if set_json['map']:
                 inxyt = (float(str(self.ui.xyt_1.text()).split()[6]),float(str(self.ui.xyt_1.text()).split()[8]))
                 plt.plot_points_t(inxyt,(int(out[0]),int(out[1])))
@@ -174,6 +220,9 @@ class MainWindow(QMainWindow):
 
     def copy_2(self):
         self.ui.xyt_2.setText(pyperclip.paste())
+
+    def copy_3(self):
+        self.ui.xyt_3.setText(pyperclip.paste())
     
     def ck_y(self):
         global vd
@@ -232,7 +281,13 @@ class MainWindow(QMainWindow):
             if QMessageBox.information(self, "发现新版本", f"你的版本：{version}，新的版本{data['tag_name']}\n新版本介绍：\n{data['body']}",QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes) == QMessageBox.Yes:
                 webbrowser.open(data["html_url"])
 
- 
+    def win_top(self):
+        if not self.ui.win_top.isChecked():
+            self.setWindowFlags(self.windowFlags() & ~Qt.WindowStaysOnTopHint)
+        else:
+            self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
+        self.show()
+
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     win = MainWindow()
